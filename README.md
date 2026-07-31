@@ -1,7 +1,6 @@
 # Enterprise Identity & Access Management Lab
-Microsoft Entra | PIM | RBAC | Conditional Access | Identity Governance
 
-<img src="blob:chrome-untrusted://media-app/2a3ecc02-dddf-4764-af65-3a03187810b5" alt="IAM lab Architecture.png"/>
+<img width="1336" height="824" alt="IAM lab Architecture" src="https://github.com/user-attachments/assets/0c16eb59-3a73-4056-8416-2cd8a37f4ca7" />
 
 # Overview
 
