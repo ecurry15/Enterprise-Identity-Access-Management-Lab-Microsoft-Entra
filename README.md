@@ -29,6 +29,7 @@
 | IT | Information Technology users |
 | Sales | Sales users |
 | Executives | Executives |
+| Marketing | Marketing users |
 
 
 ---
@@ -82,7 +83,6 @@
 | Helpdesk | Tier 1 Help Desk | Helpdesk Administrator |
 | SecOps | Security Operations Employee | Global Reader |
 
----
 
 ## Standard Users
 
@@ -128,23 +128,28 @@
 
 - Kevin Durant
 - Harrison Barnes
+
+<img width="1620" height="580" alt="users" src="https://github.com/user-attachments/assets/76015c31-d511-43c5-b035-89306b532856" />
+
 ---
 # Privileged Identity Management (PIM)
 
-For each role:
+### PIM Eligibility Created 
 
-- [ ] Verify role is **not active**
-- [ ] Activate role
-- [ ] MFA prompted
-- [ ] Justification entered
-- [ ] Administrative task completed
-- [ ] Deactivate / Expire role
-- [ ] Verify access removed
+## PIM Executed Scenarios
 
-### Evidence
-- 📷 PIM Activation
-- 📷 Active Role
-- 📷 PIM Audit Log
+1. Itern Lebron James has been hired as a full-time marketing employee. The employee needs to be moved from the Interns security group to the Marketing security group. IAMAdmin activates their eligible PIM membership to the UserAdmins group. With their new temporary role permissions, they change Lebron James's department attribute to Marketing, which moves the user to the Marketing group.
+
+#### Before PIM is Activated  
+-IAMAdmin cannot view user properties.
+<img width="1366" height="568" alt="IAMAdmin cannot see user properties before PIM" src="https://github.com/user-attachments/assets/644c2447-23fa-4a7d-8f73-432884a98ef8" />
+
+#### PIM Activation  
+<img width="1366" height="579" alt="IAMadmin activates PIM reason" src="https://github.com/user-attachments/assets/1a4937ee-af91-4b67-972a-c59fe3c601da" />
+
+#### After PIM is Activated
+-IAMAdmin can now edit user properties.
+<img width="1366" height="583" alt="Lebron Marketing" src="https://github.com/user-attachments/assets/b6d74a85-8c47-4f48-bfac-36c5e78514cc" />
 
 ---
 
