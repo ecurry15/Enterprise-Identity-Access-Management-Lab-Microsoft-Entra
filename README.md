@@ -27,6 +27,9 @@
 | HR | Human Resources users |
 | Finance | Finance users |
 | IT | Information Technology users |
+| Sales | Sales users |
+| Executives | Executives |
+
 
 ---
 
@@ -38,16 +41,36 @@
 | SG-HR-Users | Human Resources employees |
 | SG-Finance-Users | Finance employees |
 | SG-IT-Users | IT employees |
+| SG-Executive-Users | Executive employees 
+| SG-Marketing-Users | Marketing employees |
 | SG-Contractors | Contractor accounts |
+| SG-Interns | Intern accounts |
+| SG-Disabled-Users | De-activated user accounts |
+
+
+1. All Security groups are dynamic user groups. Users are added to their respective group based on their department attribute
+2. The "AllEmployees" group allows us to implement baseline configurations for all active employees like licenses, conditional access, etc. Users  are added to this group using this query `(user.accountEnabled -eq true) and (user.department -ne "Contractors") and (user.department -ne "Interns")`.
+3. The "Disabled-users" group allows us to track disabled accounts. Users are added to this group using this query `(user.accountEnabled -eq false)`. 
+
+<img width="1520" height="677" alt="dynamic group query" src="https://github.com/user-attachments/assets/4c5f6083-78ab-49f4-9df3-f0d9df3b88c9" />
+<img width="1366" height="577" alt="All dynamic groups" src="https://github.com/user-attachments/assets/49ae8ab1-a7f7-4780-8c16-c5e3088b0825" />
+
+---
+
 
 ## Role-Assignable Groups
 
-| Role-Assignable Group | Entra Role | Purpose |
+| Role-Assignable Group | Entra Role | Eligable Users |
 |-----------------------|------------|---------|
-| RAG-HelpdeskAdmins | Helpdesk Administrator | Password resets and account unlocks |
-| RAG-UserAdmins | User Administrator | User lifecycle management |
-| RAG-GroupAdmins | Groups Administrator | Security and Microsoft 365 group administration |
-| RAG-GlobalReaders | Global Reader | Read-only access for security investigations |
+| RAG-HelpdeskAdmins | Helpdesk Administrator | HelpDeskAdmin |
+| RAG-UserAdmins | User Administrator | IAMAdmin |
+| RAG-GroupAdmins | Groups Administrator | IAMAdmin |
+| RAG-GlobalReaders | Global Reader | SecOps |
+
+1. These assigned membership groups are used to implement least privilege. Roles are applied to the group rather than to an individual user. When a user needs access to role permissions, eligible users can request to join the group through PIM and receive temporary role permissions within the group.
+
+<img width="1266" height="554" alt="Role groups" src="https://github.com/user-attachments/assets/134a7e5f-8491-4fbb-a9a4-d9cfca0342a5" />
+
 
 ---
 
@@ -55,9 +78,9 @@
 
 | Account | Purpose | PIM Eligible Roles |
 |----------|---------|--------------------|
-| IAMAdmin01 | Identity Administrator | User Administrator, Groups Administrator |
-| Helpdesk01 | Tier 1 Help Desk | Helpdesk Administrator |
-| SecOps01 | Security Operations | Global Reader |
+| IAMAdmin | Identity Administrator | User Administrator, Groups Administrator |
+| Helpdesk | Tier 1 Help Desk | Helpdesk Administrator |
+| SecOps | Security Operations Employee | Global Reader |
 
 ---
 
@@ -65,24 +88,46 @@
 
 ### Human Resources
 
-- HR-EMP01
-- HR-EMP02
+- Steph Curry
+- Draymond Green
 
 ### Finance
 
-- FIN-EMP01
-- FIN-EMP02
+- Chris Paul
+- Klay Thompson
+- Steve Kerr
+- Shawn Livingston
 
 ### Information Technology
 
-- IT-EMP01
-- IT-EMP02
+- HelpDeskAdmin
+- IAMAdmin
+- SecOps
+- Andre Iggy
+- Jordan Poole
+
+### Executives
+
+- Andrew Wiggins
+- Kevon Looney
+
+### Marketing
+
+- Lebron James
+- Javale Mccgee
 
 ### Contractors
 
-- CONT-EMP01
-- CONT-EMP02
+- Jimmy Butler
 
+### Interns
+
+- Anthony Davis
+
+### Disabled
+
+- Kevin Durant
+- Harrison Barnes
 ---
 # Privileged Identity Management (PIM)
 
