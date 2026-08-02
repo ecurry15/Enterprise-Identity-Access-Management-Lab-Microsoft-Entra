@@ -138,7 +138,8 @@
 
 ## PIM Executed Scenarios
 
-1. Itern Lebron James has been hired as a full-time marketing employee. The employee needs to be moved from the Interns security group to the Marketing security group. IAMAdmin activates their eligible PIM membership to the UserAdmins group. With their new temporary role permissions, they change Lebron James's department attribute to Marketing, which moves the user to the Marketing group.
+### Scenario 1
+Intern Lebron James has been hired as a full-time marketing employee. The employee needs to be moved from the Interns security group to the Marketing security group. IAMAdmin activates their eligible PIM membership to the UserAdmins group. With their new temporary role permissions, they change Lebron James's department attribute to Marketing, which moves the user to the Marketing group.
 
 #### Before PIM is Activated  
 -IAMAdmin cannot view user properties.
@@ -152,6 +153,24 @@
 <img width="1366" height="583" alt="Lebron Marketing" src="https://github.com/user-attachments/assets/b6d74a85-8c47-4f48-bfac-36c5e78514cc" />
 
 ---
+
+### Scenario 2
+HR employee Steph Curry creates a ticket with IT to get their password reset. IT user Andre Iggy takes the ticket and enables his PIM membership to the HRHelpdesk group. This group has helpdesk admin privileges scoped to the HelpDesk administrative unit. Andre Iggy then resets Steph Curry's password.
+
+#### Before PIM is Activated
+-Andre does not have permission to reset passwords
+<img width="1366" height="580" alt="Iggy can&#39;t reset PW before activating pim" src="https://github.com/user-attachments/assets/cd4ae221-daeb-42ff-9888-281e9e8fc772" />
+
+#### PIM Activation
+<img width="1752" height="861" alt="Andre-Iggy PIM activated" src="https://github.com/user-attachments/assets/c23e3f98-a079-43ed-a27b-98c765624fea" />
+
+#### After PIM is Activated
+-Andre successfully resets Steph's password
+<img width="1366" height="581" alt="Andre Iggy resets steph pw" src="https://github.com/user-attachments/assets/aa410ba4-f9a1-4814-9096-a22105b093fb" />
+
+-Andre cannot reset users' passwords outside of the HR Administrative Unit
+ <img width="1366" height="574" alt="Andre Iggy can&#39;t reset PW outside AU" src="https://github.com/user-attachments/assets/00f22d2f-6f37-4eba-b62f-399fb0fe7aa1" />
+
 
 # Joiner Process
 
