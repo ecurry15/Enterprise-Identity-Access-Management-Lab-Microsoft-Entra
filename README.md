@@ -67,6 +67,7 @@
 | RAG-UserAdmins | User Administrator | IAMAdmin |
 | RAG-GroupAdmins | Groups Administrator | IAMAdmin |
 | RAG-GlobalReaders | Global Reader | SecOps |
+| RAG-HRhelpdesk | Helpdesk Administrator | IT employees
 
 1. These assigned membership groups are used to implement least privilege. Roles are applied to the group rather than to an individual user. When a user needs access to role permissions, eligible users can request to join the group through PIM and receive temporary role permissions within the group.
 
@@ -170,6 +171,21 @@ HR employee Steph Curry creates a ticket with IT to get their password reset. IT
 
 -Andre cannot reset users' passwords outside of the HR Administrative Unit
  <img width="1366" height="574" alt="Andre Iggy can&#39;t reset PW outside AU" src="https://github.com/user-attachments/assets/00f22d2f-6f37-4eba-b62f-399fb0fe7aa1" />
+
+### Scenario 3
+A user account needs to be analyzed to investigate a security incident. The SecOps employee activates their eligible PIM assignment, gaining temporary access to the GlobalReaders group. With the global reader role, they can view the user Edward Campbell's authentication methods and assigned roles.
+
+#### Before PIM is Activated
+-SecOps does not have permission to view Edward's role assignments.
+<img width="1366" height="578" alt="secOps cannot see AUth method" src="https://github.com/user-attachments/assets/82d082b1-0a06-4c31-a48c-50300e04e2bd" />
+
+#### PIM Activation
+<img width="1366" height="564" alt="secOPs activates PIM" src="https://github.com/user-attachments/assets/932d20b0-18aa-407e-b258-b186cc3e71e0" />
+
+
+#### After PIM is Activated
+-SecOps views authentication methods
+<img width="1366" height="581" alt="secOPs views AUth methods" src="https://github.com/user-attachments/assets/4846461f-2732-4b56-935c-3efa078babb5" />
 
 
 # Joiner Process
