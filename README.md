@@ -206,7 +206,7 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 # Mover Process
 
-#### Intern Lebron James is moved to the Marketing Department.
+#### Intern LeBron James is moved to the Marketing Department.
 
 - LeBron's department attribute is changed from "interns" to "Marketing"
 
@@ -227,40 +227,43 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 # Conditional Access
 
-## MFA Required for ALL Users
+### MFA Required for ALL Users
 
-- [ ] MFA required
-- [ ] Access granted
+- MFA is required for every account
 
-### Evidence
-- 📷 Sign-in Log
-- 📷 Conditional Access Result
+
 
 ---
 
-## Contractors are blocked from Admin Portals 
+### Contractors are blocked from Admin Portals 
 
-- [ ] MFA required
-- [ ] Admin portal blocked
+- The policy successfully blocks contractor Jimmy Butler's access to the 365 Admin center.
 
-### Evidence
-- 📷 Blocked Sign-in
-- 📷 Conditional Access Result
+<img width="1620" height="568" alt="block admin portal contractors CA" src="https://github.com/user-attachments/assets/80a068d2-9f7d-4f0a-8b91-a38ac1bb8e63" />
 
----
+<img width="1366" height="596" alt="JImmy contractor cannot log into admin portals" src="https://github.com/user-attachments/assets/e62ae250-93e2-4889-a404-c949a5f39ac3" />
 
-## Interns must sign in inside the Corporate Office
-
-- [ ] MFA required
-- [ ] Admin portal blocked
-
-### Evidence
-- 📷 Blocked Sign-in
-- 📷 Conditional Access Result
 
 ---
 
-## Break Glass
+### Interns must sign in inside the Corporate Office
+
+- A named location "Corporate Office" is created with my personal IPV4 and IPV6 addresses. The CA policy is then created to block all sign-ins excluding sign-ins from the named location.
+- The policy is set to read-only for testing
+- The policy successfully allows a sign-in from inside the named location and blocks a sign-in from outside the named location.
+
+#### Policy Creation
+<img width="1920" height="865" alt="Interns CA Policy creation" src="https://github.com/user-attachments/assets/34af1290-2c2d-4e34-bf48-46410c59ace4" /> 
+
+#### Successful In-office sign-in
+<img width="1665" height="860" alt="Intern-In-Office-log-in" src="https://github.com/user-attachments/assets/e3e7c7fe-d212-4f9a-b2e7-7c0318fe2b63" />  
+
+#### Successful block Out-of-office sign-in
+<img width="1621" height="891" alt="Intern sign-in outside office" src="https://github.com/user-attachments/assets/2b1915a1-09f0-44a5-be73-9c19ecbf1ead" />
+
+---
+
+### Break Glass
 
 - [ ] Excluded from most MFA policies but must use a different MFA method 
 
