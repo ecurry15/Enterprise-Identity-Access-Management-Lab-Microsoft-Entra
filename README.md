@@ -231,6 +231,10 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 - MFA is required for every account
 
+<img width="1341" height="576" alt="MFA required policy" src="https://github.com/user-attachments/assets/5c573031-a974-460a-88bc-a792909b7354" />  
+<img width="1366" height="571" alt="MFA required all users" src="https://github.com/user-attachments/assets/833bcebf-76d2-4ba2-8951-16f6a9385c96" />
+<img width="1349" height="565" alt="MFA required success log" src="https://github.com/user-attachments/assets/684fd109-62f1-4acf-bf60-eff3fc65abb8" />
+
 
 
 ---
