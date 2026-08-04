@@ -276,34 +276,17 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 ### Break Glass
 
-- [ ] Excluded from most MFA policies but must use a different MFA method 
+- The BreakGlass account is excluded from ALL conditional access policies.
+- Microsoft requires MFA, and in a real-world environment, this account would use a physical security key like FIDO2.
+- However, since I don't have a FIDO2 key and sms is being retired, this account is still required to use the authenticator app.
+- This account also has a sign-in alert configured for every successful sign-in.
 
-### Evidence
-- 📷 Successful Sign-in
-
----
-
-# Security Validation
-
-| Test | Expected | Status |
-|------|----------|:------:|
-| HR password reset | Success | ☐ |
-| Finance password reset | Denied | ☐ |
-| PIM activation | Success | ☐ |
-| PIM expiration | Access removed | ☐ |
-| Disabled account login | Blocked | ☐ |
-| Employee MFA | Success | ☐ |
-| Contractor admin portal | Blocked | ☐ |
-| Access Review removal | Success | ☐ |
-
-### Evidence
-- 📷 Test Results
 
 ---
 
 # Identity Governance
 
-## Access Reviews
+## Access Review
 
 - [ ] Review created
 - [ ] Reviewer assigned
@@ -311,22 +294,17 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 - [ ] Denial tested
 - [ ] Group membership updated
 
-### Evidence
-- 📷 Access Review
-- 📷 Audit Log
-
 ---
 
-# Authentication Methods
+# Log Analytics Alerts / KQL
 
-Verify user authentication methods.
+#### Log Analytics Workspace created 
 
-- [ ] Microsoft Authenticator
-- [ ] Phone
-- [ ] Email (if configured)
+#### Log forwarding created 
 
-### Evidence
-- 📷 Authentication Methods
+#### Sign-in Alert created using KQL 
+
+#### Alert successfully triggered
 
 ---
 
@@ -341,9 +319,6 @@ Verify logs exist for:
 - [ ] Password Reset
 - [ ] User Disabled
 
-### Evidence
-- 📷 Audit Logs
-
 ---
 
 # Sign-in Logs
@@ -355,9 +330,6 @@ Verify:
 - [ ] Blocked sign-in
 - [ ] PIM activation
 - [ ] Break Glass sign-in
-
-### Evidence
-- 📷 Sign-in Logs
 
 ---
 
@@ -371,10 +343,6 @@ Run and verify:
 - [ ] Export PIM Assignments
 - [ ] Export Disabled Users
 - [ ] Export Licenses
-
-### Evidence
-- 📷 PowerShell Output
-- 📷 CSV Files
 
 ---
 
@@ -398,7 +366,3 @@ Run and verify:
 | Security Validation | ☐ |
 | Documentation | ☐ |
 
----
-### Emergency Accounts
-
-- BreakGlass01
