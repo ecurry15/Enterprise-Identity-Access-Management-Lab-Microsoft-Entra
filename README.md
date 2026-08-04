@@ -1,6 +1,8 @@
 # Enterprise Identity & Access Management Lab
 
-<img width="1336" height="824" alt="IAM lab Architecture" src="https://github.com/user-attachments/assets/0c16eb59-3a73-4056-8416-2cd8a37f4ca7" />
+<img width="1336" height="824" alt="Lab image final" src="https://github.com/user-attachments/assets/b7a5955e-33d3-4d89-aaeb-ca5298eb937a" />
+
+
 
 # Overview
 
@@ -15,6 +17,7 @@
 - Least Privilege Administration
 - Zero Trust Principles
 - CloudShell/Powershell automation
+- Log Analytics Workspace Alerts
 
 ---
 
@@ -129,6 +132,10 @@
 
 - Kevin Durant
 - Harrison Barnes
+
+### BreakGlass
+
+- BreakGlass
 
 <img width="1620" height="580" alt="users" src="https://github.com/user-attachments/assets/76015c31-d511-43c5-b035-89306b532856" />
 
