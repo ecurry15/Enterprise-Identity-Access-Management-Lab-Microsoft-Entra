@@ -17,7 +17,7 @@
 - Least Privilege Administration
 - Zero Trust Principles
 - CloudShell/Powershell automation
-- Log Analytics Workspace Alerts
+- Log Analytics Workspace KQL Alerts
 
 ---
 
@@ -142,9 +142,9 @@
 ---
 # Privileged Identity Management (PIM)
 
-### PIM Eligibility Created 
+## PIM Eligibility Created 
 
-## PIM Executed Scenarios
+## PIM Scenarios
 
 ### Scenario 1
 Intern Lebron James has been hired as a full-time marketing employee. The employee needs to be moved from the Interns security group to the Marketing security group. IAMAdmin activates their eligible PIM membership to the UserAdmins group. With their new temporary role permissions, they change Lebron James's department attribute to Marketing, which moves the user to the Marketing group.
