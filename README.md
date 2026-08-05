@@ -316,11 +316,24 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 ## Access Review
 
-- [ ] Review created
-- [ ] Reviewer assigned
-- [ ] Approval tested
-- [ ] Denial tested
-- [ ] Group membership updated
+#### Review Contractors Monthly Access Review is Created 
+
+- IAMAdmin is added as a reviewer to confirm if the contractor users are still active. They are to approve or deny users' membership in the contractor group monthly.
+
+<img width="1620" height="780" alt="Access review creation" src="https://github.com/user-attachments/assets/2939c946-1ed4-4d1a-a4e7-629b507de43e" />
+
+
+
+#### IAMAdmin completes Access Review
+
+- IAMAdmin has approved Jimmy Butler but denied Kevin Durant.
+
+<img width="1425" height="501" alt="Access review completed" src="https://github.com/user-attachments/assets/7d265e34-8a4e-4f1f-aa90-2f0ae0a6ab6f" />
+
+#### Leaver Process 
+
+- Due to the contractor group being a dynamic security group, automatic removal of users is not allowed. Therefore, "Auto apply results to resource" is disabled.
+- IAMAdmin completes the review, then manually disables Kevin Durant's account.
 
 ---
 
