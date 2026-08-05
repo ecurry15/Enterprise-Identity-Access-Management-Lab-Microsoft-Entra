@@ -200,7 +200,7 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 # Joiner Process
 
-#### New employee Shawn Livingston is created.
+### New employee Shawn Livingston is created.
 
 
 
@@ -213,7 +213,7 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 # Mover Process
 
-#### Intern LeBron James is moved to the Marketing Department.
+### Intern LeBron James is moved to the Marketing Department.
 
 - LeBron's department attribute is changed from "interns" to "Marketing"
 
@@ -223,7 +223,7 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 # Leaver Process
 
-#### Employee Harrison Barnes is terminated, and their account is disabled.
+### Employee Harrison Barnes is terminated, and their account is disabled.
 
 - The "Account enabled" attribute is unchecked, and the user's department is changed to "disabled". This removes them from their original department, removes them from the AllEmployees group, and adds them to the Disabled-users group.
 
@@ -263,13 +263,13 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 - The policy is set to read-only for testing
 - The policy successfully allows a sign-in from inside the named location and blocks a sign-in from outside the named location.
 
-#### Policy Creation
+### Policy Creation
 <img width="1920" height="865" alt="Interns CA Policy creation" src="https://github.com/user-attachments/assets/34af1290-2c2d-4e34-bf48-46410c59ace4" /> 
 
-#### Successful In-office sign-in
+### Successful In-office sign-in
 <img width="1665" height="860" alt="Intern-In-Office-log-in" src="https://github.com/user-attachments/assets/e3e7c7fe-d212-4f9a-b2e7-7c0318fe2b63" />  
 
-#### Successful block Out-of-office sign-in
+### Successful block Out-of-office sign-in
 <img width="1621" height="891" alt="Intern sign-in outside office" src="https://github.com/user-attachments/assets/2b1915a1-09f0-44a5-be73-9c19ecbf1ead" />
 
 ---
@@ -285,12 +285,12 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 # Log Analytics Alerts / KQL
 
-#### Diagnostic Setting / Log forwarding created  
+### Diagnostic Settings / Log forwarding created  
 
 - Forwards SignInLogs to Log Analytics Workspace
 <img width="1405" height="568" alt="log forwarding" src="https://github.com/user-attachments/assets/abcc81c2-b309-439e-beef-6983503e10cf" />
 
-#### Sign-in Alert created using KQL 
+### Sign-in Alert created using KQL 
 
 - KQL Query Used to find the Event
 
@@ -301,7 +301,7 @@ A user account needs to be analyzed to investigate a security incident. The SecO
   <img width="1428" height="568" alt="KQL query" src="https://github.com/user-attachments/assets/eac1d2e2-d53c-43fb-9961-814c9cc27fb1" />
 
 
-#### Alert successfully triggered
+### Alert successfully triggered
 
 - The Breakglass account signs in and the alert is triggered. Email alerts are also configured.
 
@@ -316,7 +316,7 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 ## Access Review
 
-#### Review Contractors Monthly Access Review is Created 
+### Creation: Review Contractors Monthly
 
 - IAMAdmin is added as a reviewer to confirm if the contractor users are still active. They are to approve or deny users' membership in the contractor group monthly.
 
@@ -324,13 +324,13 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 
 
-#### IAMAdmin completes Access Review
+### IAMAdmin completes Access Review
 
 - IAMAdmin has approved Jimmy Butler but denied Kevin Durant.
 
 <img width="1425" height="501" alt="Access review completed" src="https://github.com/user-attachments/assets/7d265e34-8a4e-4f1f-aa90-2f0ae0a6ab6f" />
 
-#### Leaver Process 
+### Leaver Process 
 
 - Due to the contractor group being a dynamic security group, automatic removal of users is not allowed. Therefore, "Auto apply results to resource" is disabled.
 - IAMAdmin completes the review, then manually disables Kevin Durant's account.
