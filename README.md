@@ -337,32 +337,8 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 ---
 
-# Audit Logs
+# PowerShell/Cloudshell Validation
 
-Verify logs exist for:
-
-- [ ] User Created
-- [ ] User Updated
-- [ ] Group Membership Changed
-- [ ] PIM Activated
-- [ ] Password Reset
-- [ ] User Disabled
-
----
-
-# Sign-in Logs
-
-Verify:
-
-- [ ] Successful sign-in
-- [ ] MFA sign-in
-- [ ] Blocked sign-in
-- [ ] PIM activation
-- [ ] Break Glass sign-in
-
----
-
-# PowerShell Validation
 
 Run and verify:
 
