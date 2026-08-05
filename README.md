@@ -117,34 +117,25 @@
 
 ### Marketing
 
-- Lebron James
 - Javale Mccgee
+- Harrison Barnes
 
 ### Contractors
 
 - Jimmy Butler
+- Kevin Durant
 
 ### Interns
 
 - Anthony Davis
-
-### Disabled
-
-- Kevin Durant
-- Harrison Barnes
-
-### BreakGlass
-
-- BreakGlass
+- Lebron James
 
 <img width="1620" height="580" alt="users" src="https://github.com/user-attachments/assets/76015c31-d511-43c5-b035-89306b532856" />
 
 ---
 # Privileged Identity Management (PIM)
 
-## PIM Eligibility Created 
-
-## PIM Scenarios
+## PIM Utilized Scenarios
 
 ### Scenario 1
 Intern Lebron James has been hired as a full-time marketing employee. The employee needs to be moved from the Interns security group to the Marketing security group. IAMAdmin activates their eligible PIM membership to the UserAdmins group. With their new temporary role permissions, they change Lebron James's department attribute to Marketing, which moves the user to the Marketing group.
