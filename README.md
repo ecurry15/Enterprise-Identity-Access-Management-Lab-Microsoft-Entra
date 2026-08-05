@@ -339,7 +339,9 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 # PowerShell/Cloudshell Validation
 
-### Exported Active Users 
+### Exported Active Users  
+
+- File: [active_azure_ad_users.json](https://github.com/user-attachments/files/30730183/active_azure_ad_users.json)
 
 - Script Ran
 
@@ -361,7 +363,10 @@ Write-Host "Successfully exported $($deletedUsers.Count) deleted users to $outpu
 
 ### Exported Disabled Users  
 
+- File: [disabled_azure_ad_users.json](https://github.com/user-attachments/files/30730257/disabled_azure_ad_users.json)
+
 - Script Ran
+
 ```
   # Define output JSON path
 $outputPath = "./disabled_azure_ad_users.json"
@@ -381,6 +386,8 @@ Write-Host "Successfully exported $($disabledUsers.Count) disabled users to $out
 ```
 
 ### Exported Groups 
+
+- File: [azure_ad_groups_with_members.json](https://github.com/user-attachments/files/30730357/azure_ad_groups_with_members.json)
 
 - Script Ran
 
@@ -413,8 +420,6 @@ foreach ($group in $groups) {
 $groupList | ConvertTo-Json -Depth 4 | Set-Content -Path $outputPath -Encoding UTF8
 Write-Host "Successfully exported $($groupList.Count) groups and their members to $outputPath" -ForegroundColor Green
 ```
-
-
 
 ---
 
