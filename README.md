@@ -339,15 +339,82 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 
 # PowerShell/Cloudshell Validation
 
+### Exported Active Users 
 
-Run and verify:
+- Script Ran
 
-- [ ] Export Users
-- [ ] Export Groups
-- [ ] Export Role Assignments
-- [ ] Export PIM Assignments
-- [ ] Export Disabled Users
-- [ ] Export Licenses
+```
+ # Define output JSON path
+$outputPath = "./deleted_azure_ad_users.json"
+Write-Host "Fetching soft-deleted Azure AD users..." -ForegroundColor Cyan
+# Query soft-deleted user objects
+$deletedUsers = Get-AzADDeletedItem -Filter "isof('microsoft.graph.user')" | Select-Object `
+    DisplayName, `
+    UserPrincipalName, `
+    Id, `
+    DeletedDateTime, `
+    UserType
+# Export results to JSON
+$deletedUsers | ConvertTo-Json -Depth 3 | Set-Content -Path $outputPath -Encoding UTF8
+Write-Host "Successfully exported $($deletedUsers.Count) deleted users to $outputPath" -ForegroundColor Green
+```
+
+### Exported Disabled Users  
+
+- Script Ran
+```
+  # Define output JSON path
+$outputPath = "./disabled_azure_ad_users.json"
+Write-Host "Fetching disabled Azure AD users..." -ForegroundColor Cyan
+# Query disabled users (accountEnabled eq false)
+$disabledUsers = Get-AzADUser -Filter "accountEnabled eq false" -Select "DisplayName","UserPrincipalName","Mail","UserType","AccountEnabled","Id","Department" | Select-Object `
+    DisplayName, `
+    UserPrincipalName, `
+    Mail, `
+    Department, `
+    UserType, `
+    AccountEnabled, `
+    Id
+# Export results to JSON
+$disabledUsers | ConvertTo-Json -Depth 3 | Set-Content -Path $outputPath -Encoding UTF8
+Write-Host "Successfully exported $($disabledUsers.Count) disabled users to $outputPath" -ForegroundColor Green  
+```
+
+### Exported Groups 
+
+- Script Ran
+
+```
+# Define output JSON path
+$outputPath = "./azure_ad_groups_with_members.json"
+Write-Host "Fetching Azure AD groups and members..." -ForegroundColor Cyan
+# Fetch all groups
+$groups = Get-AzADGroup
+$groupList = [System.Collections.Generic.List[Object]]::new()
+foreach ($group in $groups) {
+    Write-Host "Processing group: $($group.DisplayName)" -ForegroundColor Gray  
+    # Retrieve members for the current group
+    $members = Get-AzADGroupMember -GroupObjectId $group.Id | Select-Object `
+        DisplayName, `
+        UserPrincipalName, `
+        UserType, `
+        Id
+    # Construct custom group object
+    $groupObject = [PSCustomObject]@{
+        GroupName   = $group.DisplayName
+        GroupId     = $group.Id
+        Description = $group.Description
+        MemberCount = ($members | Measure-Object).Count
+        Members     = $members
+    }
+    $groupList.Add($groupObject)
+}
+# Export results to JSON
+$groupList | ConvertTo-Json -Depth 4 | Set-Content -Path $outputPath -Encoding UTF8
+Write-Host "Successfully exported $($groupList.Count) groups and their members to $outputPath" -ForegroundColor Green
+```
+
+
 
 ---
 
