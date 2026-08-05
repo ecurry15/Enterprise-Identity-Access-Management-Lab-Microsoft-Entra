@@ -281,6 +281,34 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 - However, since I don't have a FIDO2 key and sms is being retired, this account is still required to use the authenticator app.
 - This account also has a sign-in alert configured for every successful sign-in.
 
+---
+
+# Log Analytics Alerts / KQL
+
+#### Diagnostic Setting / Log forwarding created  
+
+- Forwards SignInLogs to Log Analytics Workspace
+<img width="1405" height="568" alt="log forwarding" src="https://github.com/user-attachments/assets/abcc81c2-b309-439e-beef-6983503e10cf" />
+
+#### Sign-in Alert created using KQL 
+
+- KQL Query Used to find the Event
+
+  `` SigninLogs
+  | where UserId == "60afe846-8100-4aaf-a672-d5395308ca92"
+  | project TimeGenerated, UserPrincipalName, UserId, IPAddress ``
+
+  <img width="1428" height="568" alt="KQL query" src="https://github.com/user-attachments/assets/eac1d2e2-d53c-43fb-9961-814c9cc27fb1" />
+
+
+#### Alert successfully triggered
+
+- The Breakglass account signs in and the alert is triggered. Email alerts are also configured.
+
+<img width="1380" height="534" alt="Break glass alert triggered" src="https://github.com/user-attachments/assets/ab0c5721-d378-46fd-ba82-6642fcbe8e73" />
+
+<img width="1527" height="521" alt="alert email" src="https://github.com/user-attachments/assets/10a4b5e5-008d-4331-bb9e-f61080707c31" />
+
 
 ---
 
@@ -293,18 +321,6 @@ A user account needs to be analyzed to investigate a security incident. The SecO
 - [ ] Approval tested
 - [ ] Denial tested
 - [ ] Group membership updated
-
----
-
-# Log Analytics Alerts / KQL
-
-#### Log Analytics Workspace created 
-
-#### Log forwarding created 
-
-#### Sign-in Alert created using KQL 
-
-#### Alert successfully triggered
 
 ---
 
