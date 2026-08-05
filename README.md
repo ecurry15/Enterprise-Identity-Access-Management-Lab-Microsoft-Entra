@@ -11,18 +11,18 @@
 This project demonstrates an enterprise-grade Microsoft Entra Identity and Access Management (IAM) environment built on Zero Trust principles and least privilege administration. The lab covers identity life-cycle management, PIM , conditional access enforcement, identity governance, automated audit reporting via PowerShell, and real-time security alerting using Log Analytics with KQL.
 
 ### Core Focus Areas
-* **Identity Lifecycle Management:** Joiner, Mover, and Leaver automation.
-* **Access Control:** Dynamic Security Groups, Role-Based Access Control (RBAC), and Administrative Units (AUs).
-* **Privileged Access Management:** Just-In-Time (JIT) access using Privileged Identity Management (PIM).
-* **Zero Trust & Security Controls:** Conditional Access policies, named locations, and break-glass monitoring.
-* **Governance & Automation:** Access reviews, Azure CloudShell PowerShell reporting, and Log Analytics KQL alerts.
 
+* **Identity Lifecycle:** Automated Joiner, Mover, and Leaver (JML) workflows.
+* **Access Control:** Scoped RBAC using Dynamic Groups and Administrative Units.
+* **Privileged Access:** Just-In-Time (JIT) role activation via PIM.
+* **Zero Trust Security:** Enforced Conditional Access, IP fencing, and break-glass logging.
+* **Governance & Detection:** Automated Access Reviews, PowerShell reporting, and KQL security alerts.
 ---
 
 ## Environment Architecture
 
 ### Administrative Units (AUs)
-Administrative Units scope permissions to specific subsets of the organization. They are used manage departments in this lab.
+Administrative Units scope permissions to specific subsets of the organization. They are used to manage departments in this lab.
 
 | Administrative Unit | Purpose |
 | :--- | :--- |
@@ -147,8 +147,9 @@ During a security incident investigation, analyst `SecOps` needs to review authe
   <br>
   <img src="https://github.com/user-attachments/assets/932d20b0-18aa-407e-b258-b186cc3e71e0" width="800" alt="SecOps PIM Activation" />
   <br>
-  <img src="https://github.com/user-attachments/assets/4846461f-2732-4b56-935c-3efa078babb5" width="800" alt="SecOps Inspects Auth Methods" />
+  <img width="800" alt="secOPs views AUth methods" src="https://github.com/user-attachments/assets/145b3c0e-c364-439f-9000-0910d7c1bbd8" />
 </div>
+
 
 ---
 
