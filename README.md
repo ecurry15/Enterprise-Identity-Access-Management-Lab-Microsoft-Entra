@@ -8,7 +8,7 @@
 
 ## Overview
 
-This project demonstrates an enterprise-grade Microsoft Entra Identity and Access Management (IAM) environment built on Zero Trust principles and least privilege administration. The lab covers identity life-cycle management, PIM , conditional access enforcement, identity governance, automated audit reporting via PowerShell, and real-time security alerting using Log Analytics with KQL.
+This project demonstrates an enterprise-grade Microsoft Entra Identity and Access Management (IAM) environment built on Zero Trust principles and least privilege administration. The lab covers identity life-cycle management, PIM, conditional access enforcement, identity governance, automated audit reporting via PowerShell, and real-time security alerting using Log Analytics with KQL.
 
 ### Core Focus Areas
 
@@ -368,6 +368,32 @@ foreach ($group in $groups) {
 $groupList | ConvertTo-Json -Depth 4 | Set-Content -Path $outputPath -Encoding UTF8
 Write-Host "Successfully exported $($groupList.Count) groups and their members to $outputPath" -ForegroundColor Green
 ```
+---
+
+## Challenges & Lessons Learned
+
+### 1. Role-Assignable Groups Scoped to Administrative Units
+* **Challenge:** I planned to use PIM for groups scoped to an Administrative Unit (AU) so users could gain temporary AU-level permissions. However, assigning the role to the group granted directory-wide access instead of restricting it to the AU.
+* **Key Insight:** PIM for groups applies permissions tenant-wide across the directory, overriding the local AU scope.
+* **Resolution:** Configured PIM eligibility directly on individual user accounts for the AU-scoped role rather than through the group.
+
+---
+
+### 2. Access Reviews on Dynamic Security Groups
+* **Challenge:** Access reviews could not automatically remove denied users from dynamically assigned security groups.
+* **Key Insight:** Access reviews do not modify user profile attributes (e.g., Department), which are what drive dynamic group membership rules.
+* **Resolution:** Handled user removal manually as part of the leaver workflow for this lab. Future setups will use static groups to take full advantage of automated deprovisioning.
+
+---
+
+### 3. Azure Log Analytics Workspace Access
+* **Challenge:** My Global Admin account could not access or manage the Log Analytics Workspace.
+* **Key Insight:** Global Admin grants control over the Microsoft Entra **Identity plane**, but does not grant rights to Azure resources in the **Resource plane** (Azure Subscriptions).
+* **Resolution:** Navigated to the Azure Subscription IAM settings and assigned the **Log Analytics Contributor** Azure RBAC role to the account.
+
+
+
+
 ---
 
 ## Summary
