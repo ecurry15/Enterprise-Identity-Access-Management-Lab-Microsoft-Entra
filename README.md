@@ -75,7 +75,7 @@ To uphold least privilege, administrative roles are assigned directly to groups 
 
 ---
 
-### Directory Directory Structure
+### Directory Structure
 
 #### Administrative Accounts
 * `IAMAdmin` (Eligible for User Admin, Groups Admin)
