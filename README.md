@@ -398,7 +398,7 @@ Write-Host "Successfully exported $($groupList.Count) groups and their members t
 
 ## Summary
 
-This enterprise lab demonstrates a secure, production-ready Microsoft Entra ID administration model. Key operational achievements include:
+This lab demonstrates secure, production-ready Microsoft Entra ID administration. Key achievements:
 
 1. **Automated Lifecycle Management:** Attribute-driven dynamic security groups eliminate manual group maintenance during Joiner, Mover, and Leaver events.
 2. **Strict Least Privilege:** Implementing Role-Assignable Groups scoped to Administrative Units guarantees admins only possess permissions required for their assigned department.
