@@ -40,7 +40,7 @@ All security groups utilize **dynamic membership rules** to automate user assign
 
 | Group Name | Type | Membership Rule / Purpose |
 | :--- | :--- | :--- |
-| `SG-AllEmployees` | Dynamic | Baseline configuration (Licensing, CA) for active employees:<br>`(user.accountEnabled -eq true) and (user.department -ne "Contractors") and (user.department -ne "Interns")` |
+| `SG-AllEmployees` | Dynamic | Baseline configuration (Licensing & conditional access) for active employees:<br>`(user.accountEnabled -eq true) and (user.department -ne "Contractors") and (user.department -ne "Interns")` |
 | `SG-HR-Users` | Dynamic | `(user.department -eq "HR")` |
 | `SG-Finance-Users` | Dynamic | `(user.department -eq "Finance")` |
 | `SG-IT-Users` | Dynamic | `(user.department -eq "Information Technology")` |
